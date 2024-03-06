@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TestService {
+  navigate(arg0: string[]) {
+    throw new Error('Method not implemented.');
+  }
   constructor() { }
   products=[
     {

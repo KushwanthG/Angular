@@ -13,7 +13,7 @@ export class ProductsComponent {
     this.ar.queryParamMap.subscribe((list)=>{
       let category=list.get('category')
       if(category){
-        this.products=this.ts.products.filter((p,i,paar)=>{return p.category==category})
+        this.products=this.ts.products.filter((p)=> { return p.category==category } )
       }
       else{
         this.products=ts.products;
