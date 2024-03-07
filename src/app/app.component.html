@@ -1,5 +1,23 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
+<router-outlet></router-outlet>
+<button (click)="getData()">Send</button>
+<div *ngIf="data">
+    <table border="1">
+        <th>Name</th>
+        <th>Id</th>
+        <th>Price</th>
+        <tr *ngFor="let p of data">
+            <td>{{p.title}}</td>
+            <td>{{p.id}}</td>
+            <td>{{p.price}}</td>
 
-<router-outlet>
+        </tr>
+    </table>
+</div>
+<br>
+<button (click)="test()">SUB</button> -->
 
-</router-outlet>
+<div class="container">
+    <app-todoform></app-todoform>
+    <app-todolist></app-todolist>
+</div>

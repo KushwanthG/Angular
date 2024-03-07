@@ -1,4 +1,12 @@
-<p>home works!</p>
-<div *ngFor="let m of movies">
-    {{m}}
+
+<div>
+    <ul>
+        <li>
+            <a routerLink="/home/ntr" routerLinkActive="active">NTR</a>
+        </li>
+        <li>
+            <a routerLink="/home/ram" routerLinkActive="active">RAM</a>
+        </li>
+    </ul>
 </div>
+<router-outlet></router-outlet>

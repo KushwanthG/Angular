@@ -8,10 +8,5 @@ import { TestService } from '../test.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent{
-movies: any;
-
-  constructor(private ts:TestService){
-  }
-  products=this.ts.products;
 
 }

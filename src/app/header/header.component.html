@@ -1,18 +1,23 @@
-<ul>
-    <li>
-        <a routerLink="/products">Products</a>
-    </li>
-
-    <li>
-        <a routerLink="products" routerLinkActive="active" [queryParams]="{'category':'Bromance'}">RRR</a>
-    </li>
-    <li>
-        <a routerLink="/products" routerLinkActive="active" [queryParams]="{'category':'Heroic'}">KGF</a>
-    </li>
-    <li>
-        <a routerLink="/products" routerLinkActive="active" [queryParams]="{'category':'Perodic'}">BAAHUBALI</a>
-    </li>
-
-    <button (click)="navigate()">Navigate</button>
-</ul>
+<div>
+    <ul>
+        <li>
+            <a routerLink="/home">HOME</a>
+        </li>
+        <li>
+            <a routerLink="/products">Products</a>
+        </li>
+        <li>
+            <a routerLink="products" routerLinkActive="active" [queryParams]="{'category':'Bromance'}">RRR</a>
+        </li>
+        <li>
+            <a routerLink="/products" routerLinkActive="active" [queryParams]="{'category':'Heroic'}">KGF</a>
+        </li>
+        <li>
+            <a routerLink="/products" routerLinkActive="active" [queryParams]="{'category':'Perodic'}">BAAHUBALI</a>
+        </li>
+    
+        <button (click)="navigate()">navigate</button>
+    </ul>
+    
+</div>
 
