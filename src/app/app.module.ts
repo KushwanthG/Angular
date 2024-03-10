@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NothingComponent } from './nothing/nothing.component';
@@ -16,6 +16,10 @@ import { AuthService } from './auth.service';
 import { TodolistComponent } from './todolist/todolist.component';
 import { TodoformComponent } from './todoform/todoform.component';
 import { TodoService } from './todo.service';
+import { MobileService } from './mobile.service';
+import { MobileComponent } from './mobile/mobile.component';
+import { FoamComponent } from './foam/foam.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 const routes:Routes=[
   {
@@ -45,16 +49,21 @@ const routes:Routes=[
     NtrComponent,
     RamComponent,
     TodolistComponent,
-    TodoformComponent
+    TodoformComponent,
+    MobileComponent,
+    FoamComponent,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
-  providers: [TestService,AuthService,TodoService],
+  providers: [TestService,AuthService,TodoService,MobileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+input.ng-touched.ng-invaild{
+    border: red;
+}
+
+input.ng-touched.ng-vaild{
+    border: green;
+}
+
+div{
+    color: red;
+}

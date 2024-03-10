@@ -1,0 +1,61 @@
+<p>mobile works!</p>
+
+<div *ngIf="mobiles;else err" class="container mob-table" >
+    <div class="headers">
+        <h2 class="table-title">Manage mobiles</h2>
+        <button class="btn add" (click)="openForm()">Add Button</button>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>userId</th>
+                <th>date</th>    
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let m of mobiles">
+                <td>{{m.id}}</td>
+                <td>{{m.userId }}</td>
+                <td>{{m.date}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="openForm(mobiles)">Edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteMobile(m.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #err>
+    <p class="text-danger">Error Fetching Data</p>
+</ng-template>
+
+
+<div class="form-wrapper" *ngIf="showForm">
+    <div class="mobile-form">
+        <h2 class="text-center text-info">{{formHeader}}</h2>
+
+        <div class="group">
+            <label>ID</label>
+            <input type="number" class="formControl" [(ngModel)]="id" >
+        </div>
+        <div class="group">
+            <label>UserID</label>
+            <input type="number" class="formControl" [(ngModel)]="userId" >
+        </div>
+        <div class="group">
+            <label>Date</label>
+            <input type="date" class="formControl" [(ngModel)]="date">
+        </div>
+        
+        <div class="action">
+            <button class="btn btn-primary save" (click)="saveMobile()">Save Changes</button>
+            <button class="btn btn-danger cancel" (click)="closeForm()">Cacel</button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<p>foam works!</p>
+
+<form #login="ngForm" (ngSubmit)="show(login)" >
+
+    <div ngModelGroup="personal" #group="ngModelGroup">
+
+        <label class="m-2">Username:</label>
+        <input type="text" class="form-control w-50 m-2" ngModel name="username" #uname="ngModel" required="1" minlength="3">
+
+        <label class="m-2">Password:</label>
+        <input type="password" class="form-control w-50 m-2" ngModel name="password" #pwd="ngModel" required="1">
+
+        <ng-container *ngIf="uname.touched">
+            <p class="error-msg" *ngIf="uname.errors?.['minlength']">Enter 3 characters</p>
+            <p class="error-msg" *ngIf="uname.errors?.['required']">Username is required</p>
+        </ng-container>
+
+        <button class="btn btn-primary m-2">Click</button>
+    </div>
+</form>
+{{login.value|json}}
