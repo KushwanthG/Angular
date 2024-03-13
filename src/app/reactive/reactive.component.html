@@ -1,9 +1,7 @@
 <p>reactive works!</p>
 
 <form [formGroup]="login"> 
-    Username:<input type="text" class="form-control w-50 m-2" formControlName="uname">
-    Password:<input type="text" class="form-control w-50 m-2" formControlName="pwd">
-    <div *ngIf="login.get('uname')?.touched && login.get('uname')?.hasError('required')">User is required</div>
-    <div *ngIf="login.controls['uname']?.touched && login.controls['uname']?.errors"> minlength is required</div>
+    Username:<input type="text" class="form-control w-50 m-2" formControlName="username">
+    <div *ngIf="this.login.get('username')?.touched && this.login.get('username')?.errors">User is Duplicate</div>
     <button (click)="show()">click</button>
 </form>

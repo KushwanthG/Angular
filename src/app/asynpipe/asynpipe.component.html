@@ -1,0 +1,15 @@
+
+<table border="1">
+    <thead>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>EMAIL</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users | async">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+        </tr>
+    </tbody>
+</table>

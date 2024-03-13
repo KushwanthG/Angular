@@ -20,6 +20,8 @@ import { MobileService } from './mobile.service';
 import { MobileComponent } from './mobile/mobile.component';
 import { FoamComponent } from './foam/foam.component';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { AsynpipeComponent } from './asynpipe/asynpipe.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 
 const routes:Routes=[
   {
@@ -52,7 +54,9 @@ const routes:Routes=[
     TodoformComponent,
     MobileComponent,
     FoamComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    AsynpipeComponent,
+    TemplateDrivenComponent
   ],
   imports: [
     BrowserModule,

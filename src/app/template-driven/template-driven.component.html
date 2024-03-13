@@ -1,0 +1,60 @@
+<p>template-driven works!</p>
+
+
+<div class="card w-50 mx-auto mt-4">
+    <h4 class="card-header">Sign Up</h4>
+    <div class="card-body">
+
+        <form #login="ngForm" (ngSubmit)="show(login)">
+            <div class="foam-group">
+                <label>Username:</label>
+                <input type="text" class="form-control" ngModel name="uname" #u="ngModel" required="" minlength="8" uname>
+                <div class="invaild" *ngIf="login.controls['uname']?.['touched'] && login.controls['uname']?.['errors']">
+                    <div *ngIf="login.controls['uname']?.['errors']?.['required']"> Email is required </div>
+                    <div *ngIf="login.controls['uname']?.['errors']?.['minlength']"> minlength 8 Character required  </div>
+                </div>
+            </div>
+            <div>
+                <label>E-mail:</label>
+                <input type="email" class="form-control" ngModel name="mail" #u="ngModel" required="" email>
+                <div class="invaild" *ngIf="login.controls['mail']?.['touched'] && login.controls['mail']?.['errors']">
+                    <div *ngIf="login.controls['mail']?.['errors']?.['required']">E-mail is required</div>
+                    <div *ngIf="login.controls['mail']?.['errors']?.['email']">Invaild E-mail</div>
+
+                </div>
+            </div>     
+            <div>
+                <label>Password:</label>
+                <input type="password" class="form-control" ngModel name="pwd" #u="ngModel" required="" minlength="8">
+                <div class="invaild" *ngIf="login.controls['pwd']?.['touched'] && login.controls['pwd']?.['errors']">
+                    <div *ngIf="login.controls['pwd']?.['errors']?.['required']">Password is Required</div>
+                    <div *ngIf="login.controls['pwd']?.['errors']?.['minlength']">Password must be 8 Character</div>
+                </div>
+        
+            </div>    
+            <div>
+                <label>Confirm Password:</label>
+                <input type="password" class="form-control" ngModel name="cpwd" #u="ngModel" >
+                <div class="invaild" *ngIf="login.controls['cpwd']?.['touched'] && login.controls['cpwd']?.['value']!==login.controls['pwd']?.['value']">Password must be match</div>
+            </div>
+
+            <label>Gender</label>
+            <input type="radio" ngModel name="gender" value="F">Female
+            <input type="radio" ngModel name="gender" value="M">Male
+
+            <div>
+                <input type="checkbox" ngModel name="subscribe">Subscribe
+            </div>
+
+
+            <button class="btn btn-primary mt-2" [disabled]="login.invalid">Sign UP</button>
+        
+            <!-- {{login.value|json}} -->
+            
+        </form>
+        <div>
+            Please Enter the Details to Click Signup  : {{login.valid}}
+        </div>
+
+    </div>
+</div>

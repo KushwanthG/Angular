@@ -8,14 +8,26 @@ import { FormControl,FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reactive.component.css']
 })
 export class ReactiveComponent {
-
-  
-
   login=new FormGroup({ 
-    uname:new FormControl("Kushlu",[Validators.required,Validators.minLength(8)]),
-    pwd:new FormControl("kushlu@gmail.com",[Validators.required,Validators.minLength(8)]) 
+    username:new FormControl("u1",Validators.required,this.usernameCheck)
   })
 
+  usernameCheck(control:any):Promise<any>{
+    let response =new Promise((resolve, reject) => {
+      let users=["u1","u2","u3"];
+      let name = control.value;
+      setTimeout(() => {
+        if (users.indexOf(name) > 0) {
+          resolve({ "dulipateuser": true });
+        }
+        else {
+          resolve(null);
+        }
+      });
+    });
+    return response
+  }
+  
   show(){
     console.log(this.login)
   }
